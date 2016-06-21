@@ -1,0 +1,29 @@
+<div class="search-albums container">
+
+    <!-- albums found row -->
+    <div class="row" ng-if="albums.length">
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="found-results">Showing albums for {{query}}.</div>
+        </div>
+      </div>
+
+      <!-- albums -->
+      <div class="row">
+        <div class="col-sm-2" ng-repeat="album in albums">
+          <div class="album-brief">
+            <album-brief id={{album.id}}></album-brief>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- albums not found row -->
+    <div class="row" ng-if="!albums.length">
+      <div class="found-results">
+        No albums found for {{query}}.
+      </div>
+    </div> <!-- albums not found row -->
+
+</div>

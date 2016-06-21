@@ -1,0 +1,12 @@
+.song-brief {
+  .song-brief-meta {
+    padding: 10px 0px;
+
+    @include tablet {
+      color: $font-artist-brief;
+      border: none;
+      padding: 5px 0px;
+    }
+  }
+
+}

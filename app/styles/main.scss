@@ -5,8 +5,28 @@
 @import '../scripts/**/*.scss';
 
 body {
-  font-family: 'OpenSansRegular', Helvetica, sans-serif;
+  font-family: 'ProximaNova', Helvetica, sans-serif;
   color: $font-color--light;
   background-color: $background--dark;
-  padding: $half-space;
+  font-size: 14px;
+}
+
+.found-results {
+  font-family: ProximaNovaThin;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+
+  @include tablet {
+    font-size: 1.2em;
+  }     
+}
+
+.search-title, .song-meta-title, a.see-all, a {
+  color: $font-title--gray;
+  font-size: 1.1em;
+  margin-bottom: .4em;
+}
+
+a.see-all {
+  text-transform: uppercase;
 }

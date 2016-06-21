@@ -1,0 +1,31 @@
+<div class="search-artists container">
+
+    <!-- artists found row -->
+    <div class="row" ng-if="artists.length">
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="found-results">Showing artists for {{query}}.</div>
+        </div>
+      </div>
+
+      <!-- artists -->
+      <div class="row">
+        <div class="col-sm-2" ng-repeat="artist in artists">
+          <div class="artist-brief">
+          <a ui-sref="home.selectedArtist({ id: artist.id })">
+            <artist-brief id={{artist.id}}></artist-brief>
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- artists not found row -->
+    <div class="row" ng-if="!artists.length">
+      <div class="found-results">
+        No artists found for {{query}}.
+      </div>
+    </div> <!-- artists not found row -->
+
+</div>

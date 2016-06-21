@@ -1,0 +1,18 @@
+.duration-icon {
+    color: $font-title--gray;
+
+    &:before {
+        content: "\f153";
+        font-size: 18px;
+        font-family: "Spoticon";
+        font-style: normal;
+    }
+}
+
+.line-space {
+   padding: 10px 0 30px;
+}
+
+.border-sep {
+  border-bottom: 1px solid $background-cover;
+}

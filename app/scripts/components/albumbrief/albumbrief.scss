@@ -1,0 +1,37 @@
+.album-brief {
+  overflow: hidden;
+  /*height: 210px;*/
+
+  @include tablet {
+    clear: both;
+    height: auto;
+  }
+
+    img {
+      width: 100%;
+
+      @include tablet {
+        width: 60px;
+        float: left;
+        margin-bottom: 15px;
+      }      
+    }
+
+    .album-info-wrap {
+      background-color: $background-cover;
+      padding: 5px 10px;
+      height: 100%;
+
+      .artist-list {
+        font-size: .85em;
+        color: $font-artist-brief;
+      }
+
+      @include tablet {
+        background-color: inherit;
+        height: auto;
+        position: relative;
+        left: 15px;        
+      }
+    }
+}

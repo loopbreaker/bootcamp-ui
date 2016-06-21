@@ -1,0 +1,27 @@
+<!-- medium devices up -->
+<div class="col song-brief">
+  <div class="col-sm-5 hidden-xs">
+    <div class="song-brief-meta">{{$ctrl.name}}</div>
+  </div>
+  <div class="col-sm-3 hidden-xs">
+    <div class="song-brief-meta">{{$ctrl.artists}}</div>
+  </div>
+  <div class="col-sm-3 hidden-xs">
+    <div class="song-brief-meta">{{$ctrl.album}}</div>
+  </div>
+  <div class="col-sm-1 hidden-xs">
+    <div class="song-brief-meta">{{$ctrl.duration | date:'m:ss'}}</div>
+  </div>
+</div>
+
+<!-- medium devices down -->
+<div class="col-sm-12 visible-xs song-brief">
+  <div class="song-brief-meta">
+    <div>
+      {{$ctrl.name}}
+    </div>
+    <div>
+      {{$ctrl.artists}} &bullet; <span class="album-name">{{$ctrl.album}}</span>
+    </div>
+  </div>
+</div>

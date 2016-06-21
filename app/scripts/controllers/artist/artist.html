@@ -1,0 +1,27 @@
+<div class="selected-artist">
+  
+  <div class="artist-img">
+    <img src="" alt={{imgurl}}>
+    <span>{{name}}</span>
+  </div>
+  
+  <div class="album-title">ALBUMS</div>
+
+  <div class="albums-container">
+    <div class="artist-albums" ng-if="albums.length">
+      <div class="album-medium" ng-repeat="album in albums | limitTo: 4">
+        <album-medium id={{album.id}}></album-medium>
+      </div>
+
+      <a ui-sref="home.searchArtists({ q: query })">
+        See All Albums
+      </a>
+    </div>
+  
+    <div class="artist-albums" ng-if="!albums.length">
+      No Albums for {{name}}
+    </div>
+
+  </div>  
+
+</div>

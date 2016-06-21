@@ -1,0 +1,143 @@
+<div class="search-all container">
+   
+  <!-- artists and albums row -->
+  <div class="row">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="found-results">Showing results for {{query}}.</div>
+      </div>
+    </div>
+
+    <!-- artists found column -->
+    <div class="col-sm-6" ng-if="artists.length">
+
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="search-title">ARTISTS</div>
+        </div>
+      </div>
+
+      <!-- artists -->
+      <div class="row">
+        <div class="col-sm-3" ng-repeat="artist in artists | limitTo: limitCount">
+          <div class="artist-brief">
+            <artist-brief id={{artist.id}}></artist-brief>
+          </div>
+        </div>
+      </div>
+
+      <!-- see all link -->
+      <div class="row line-space">
+        <div class="col-sm-12">
+          <a class="see-all" ui-sref="home.searchArtists({ q: query })">
+            See all Artists
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- artist found column -->
+    <!-- artists not found column -->
+    <div class="col-sm-6" ng-if="!artists.length">
+      <div class="found-results">
+        No artists found for {{query}}.
+      </div>
+    </div> <!-- artists not found column -->
+
+
+    <!-- albums found column -->
+    <div class="col-sm-6" ng-if="albums.length">
+
+      <!-- title -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="search-title">ALBUMS</div>
+        </div>
+      </div>
+
+      <!-- albums -->
+      <div class="row">
+        <div class="col-sm-3" ng-repeat="album in albums | limitTo: limitCount">
+          <div class="album-brief">
+            <album-brief id={{album.id}}></album-brief>
+          </div>
+        </div>
+      </div>
+
+      <!-- see all link -->
+      <div class="row line-space">
+        <div class="col-sm-12">
+          <a class="see-all" ui-sref="home.searchAlbums({ q: query })">
+            See all Albums
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- albums found column -->
+    <!-- albums not found column -->
+    <div class="col-sm-6" ng-if="!albums.length">
+      <div class="found-results">
+        No albums found for {{query}}.
+      </div>
+    </div> <!-- albums not found column -->
+  </div>
+
+  <!-- songs row -->
+  <div class="row">
+
+    <!-- songs found column -->
+    <div class="col-sm" ng-if="songs.length">
+
+      <!-- title -->
+      <div class="row hidden-xs border-sep">
+        <div class="col-sm-5">
+          <div class="song-meta-title">SONG</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="song-meta-title">ARTIST</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="song-meta-title">ALBUM</div>
+        </div>
+        <div class="col-sm-1">
+          <i class="duration-icon"></i>
+        </div>
+      </div>
+
+      <div class="row visible-xs">
+        <div class="col-sm-12">
+          <div class="search-title">SONGS</div>
+        </div>
+      </div>
+
+      <!-- songs -->
+      <div class="row border-sep" ng-repeat="song in songs | limitTo: limitCount">
+        <!--<div class="col-sm" >
+          <!--<div class="song-brief">-->
+            <song-brief id={{song.id}}></song-brief>
+          <!--</div> -->
+        <!--</div>-->
+      </div>
+
+      <!-- see all link -->
+      <div class="row line-space">
+        <div class="col-sm-12">
+          <a class="see-all" ui-sref="home.searchSongs({ q: query })">
+            See all Songs
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- songs found column -->
+
+    <!-- songs not found column -->
+    <div class="col-sm-12" ng-if="!songs.length">
+      <div class="found-results">
+        No songs found for {{query}}.
+      </div>
+    </div> <!-- songs not found column -->
+
+  </div>
+
+</div>

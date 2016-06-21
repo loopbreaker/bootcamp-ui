@@ -2,15 +2,29 @@
 	<div class="bg-main-img"></div>
 </div>
 <div>
-	<i class="fa fa-spotify fa-3x" aria-hidden="true"></i>
-	<span class="logo-text">Spotify</span>
-	<form ng-submit="home.search()">
-		<input type="text" class="search-input" ng-model="home.searchInput">
-	</form>
-	<div class="audio-player">
-		<i ng-show="home.isPaused()" ng-click="home.play()" class="fa fa-play-circle fa-3x" aria-hidden="true"></i>
-		<i ng-show="!home.isPaused()" ng-click="home.pause()" class="fa fa-pause-circle fa-3x" aria-hidden="true"></i>
-	</div>
-</div>
-<example-component hero="home.hero"></example-component>
-<div example-directive title="WOW!" click-message="You clicked me!">Directive is not loaded.</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="logo-wrapper">
+          <i class="fa fa-spotify fa-3x" aria-hidden="true"></i>
+          <span class="logo-text">Spotify</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    	<div class="col-sm-7">
+        <form ng-submit="home.search()">
+          
+        		<div class="form-group">
+        			<i class="spoticon-search-16"></i>
+              <input type="text" class="form-control search-input" ng-model="home.searchInput" placeholder="Search">
+        	  </div><!-- /input-group -->
+          
+          </form>
+    	 </div>
+    </div>
+  </div> <!-- container -->
+
+  <div ui-view class="main-container"></div>
